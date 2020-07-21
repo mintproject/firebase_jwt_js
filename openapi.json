@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "jwt_example",
+    "version": "1.0.0",
+    "description": "",
+    "contact": {
+      "name": "Maximiliano Osorio",
+      "url": "https://mosorio.dev",
+      "email": "mosorio@isi.edu"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://auth.mint.isi.edu",
+      "description": ""
+    },
+    {
+      "url": "http://localhost:8080",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/user/login": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "token": {
+                    "value": {
+                      "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb20uemFsYW5kby5jb25uZXhpb24iLCJpYXQiOjE1OTUxMTA5MDcsImV4cCI6MTY1NTExMDkwNywic3ViIjoibWludEBpc2kuZWR1In0.pyi1y926E1wPY3bI9YaHXmf7nhmXegugoWd5hRNdIck"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Returns JWT information"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "user": {
+        "description": "",
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "description": "",
+            "type": "string"
+          },
+          "password": {
+            "description": "",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

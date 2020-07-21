@@ -1,0 +1,10 @@
+version: '3'
+services:
+  auth:
+    build: .
+    image: mintproject/auth
+    restart: always
+    env_file:
+     - .env
+    ports:
+     - "26001:3000"
