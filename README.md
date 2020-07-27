@@ -22,7 +22,7 @@ docker-compose up -d --build
 
 ```bash
 curl -H "Content-Type: application/json" \
-    localhost:26001/v1/user \
+    localhost:26001/v1/user/login \
     -d '{"username": "_your_email_", "password": "_your_password_"}'
 ```
 
